@@ -155,11 +155,8 @@ module.exports = (function () {
         collection.definition[primaryKeyNames[0]].primaryKey = 'hash';
       }
       
-      // Vogels adds an 's'.  So let's remove an 's'.
-      var vogelsCollectionName  = collectionName[collectionName.length-1] === 's' ?
-      
-                                      collectionName.slice(0, collectionName.length-1) :
-                                      collectionName;
+      // Use default CollectionName
+      var vogelsCollectionName  = collectionName;
       
       var vogelsModel = Vogels.define(vogelsCollectionName, function (schema) {
         
@@ -431,9 +428,9 @@ module.exports = (function () {
       var attributes = {};
 
       // extremly simple table names
-      var tableName = collectionName.toLowerCase() + 's'; // 's' is vogels spec
+      var tableName = collectionName; // Use default TableName
       var Endpoint = collection.connections[connection]['config']['endPoint'];
-      if (DynamoDB === false) {
+      if (Endpoint != null || DynamoDB === false) { // Force using endpoint if it desired.
         DynamoDB = new AWS.DynamoDB(
           Endpoint ? {endpoint: new AWS.Endpoint(Endpoint)}
             : null
@@ -587,6 +584,7 @@ module.exports = (function () {
       }
       
       query = adapter._searchCondition(query, options, model);
+      query.table.config.name = collectionName;
       
       query.exec(function (err, res) {
         if (!err) {
@@ -830,7 +828,8 @@ module.exports = (function () {
      * @param  {[type]}   values         [description]
      * @param  {Function} cb             [description]
      * @return {[type]}                  [description]
-     */create: function (connection, collectionName, values, cb) {
+     */
+    create: function (connection, collectionName, values, cb) {
 //sails.log.silly("adaptor::create", collectionName);
 //sails.log.silly("values", values);
 //console.log("collection", _modelReferences[collectionName]);
