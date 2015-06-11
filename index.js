@@ -161,6 +161,9 @@ module.exports = (function () {
       var vogelsModel = Vogels.define(vogelsCollectionName, function (schema) {
         
         var columns = collection.definition;
+
+        // force vogels library to use the collectionName as tableName
+        schema.tableName = collectionName;
         
         var indices = {};
         
