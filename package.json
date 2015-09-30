@@ -23,13 +23,14 @@
   "author": "gadelkareem",
   "license": "MIT",
   "dependencies": {
-    "vogels": "~0.12.0",
+    "vogels": "~2.0.0-rc1",
+    "joi": "6.7.1",
     "lodash": "",
     "async": ""
   },
   "devDependencies": {
     "mocha": "~1.13.0",
-    "waterline-adapter-tests": "~0.10.0",
+    "waterline-adapter-tests": "~0.10.14",
     "captains-log": "~0.11.1"
   },
   "waterlineAdapter": {
@@ -64,42 +65,37 @@
   "directories": {
     "test": "test"
   },
-  "contributors": [
-    {
-      "name": "Waleed Gadelkareem",
-      "email": "gadelkareem@gmail.com",
-      "url": "https://github.com/gadelkareem",
-      "contributions": 27,
-      "additions": 1975,
-      "deletions": 1842,
-      "hireable": false
-    },
-    {
-      "name": "Mike McNeil",
-      "email": "customers@balderdash.co",
-      "url": "https://github.com/mikermcneil",
-      "contributions": 31,
-      "additions": 1371,
-      "deletions": 725,
-      "hireable": true
-    },
-    {
-      "name": "devin ivy",
-      "email": "devin@bigroomstudios.com",
-      "url": "https://github.com/devinivy",
-      "contributions": 14,
-      "additions": 586,
-      "deletions": 245,
-      "hireable": false
-    },
-    {
-      "name": "dozo",
-      "email": "",
-      "url": "https://github.com/dohzoh",
-      "contributions": 46,
-      "additions": 943,
-      "deletions": 517,
-      "hireable": false
-    }
-  ]
+  "contributors": [{
+    "name": "Waleed Gadelkareem",
+    "email": "gadelkareem@gmail.com",
+    "url": "https://github.com/gadelkareem",
+    "contributions": 27,
+    "additions": 1975,
+    "deletions": 1842,
+    "hireable": false
+  }, {
+    "name": "Mike McNeil",
+    "email": "customers@balderdash.co",
+    "url": "https://github.com/mikermcneil",
+    "contributions": 31,
+    "additions": 1371,
+    "deletions": 725,
+    "hireable": true
+  }, {
+    "name": "devin ivy",
+    "email": "devin@bigroomstudios.com",
+    "url": "https://github.com/devinivy",
+    "contributions": 14,
+    "additions": 586,
+    "deletions": 245,
+    "hireable": false
+  }, {
+    "name": "dozo",
+    "email": "",
+    "url": "https://github.com/dohzoh",
+    "contributions": 46,
+    "additions": 943,
+    "deletions": 517,
+    "hireable": false
+  }]
 }
