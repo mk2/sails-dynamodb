@@ -11,6 +11,7 @@ var Vogels = require('vogels');
 var Joi = require('joi');
 var AWS = Vogels.AWS;
 var _ = require('lodash');
+var util = require('util');
 var DynamoDB = false;
 var filters = {
   //?where={"name":{"null":true}}
@@ -981,8 +982,8 @@ module.exports = (function() {
         expected: options.where
       } : {};
 
-      //console.log(updateValues);
-      Model.update(values, vogelsOptions, function(err, res) {
+      //console.log('updateValues: ' + util.inspect(values));
+      Model.update(values, function(err, res) {
         if (err) {
 
           //sails.log.error('Error update data' + __filename, err);
