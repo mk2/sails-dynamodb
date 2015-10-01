@@ -191,6 +191,10 @@ module.exports = (function() {
         if (isHashKey) {
           vdef.hashKey = columnName;
         }
+
+        if (rangeKey) {
+          vdef.rangeKey = columnName;
+        }
       }
 
       return vdef;
